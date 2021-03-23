@@ -1,0 +1,204 @@
+<Lems>
+    <Include file="NeuroMLCoreCompTypes.xml"/>
+    <Include file="Simulation.xml" />
+    <ComponentType name="ggj" description="de Gruijl 2016">
+        <Constant name="D_CA" dimension="none" value="0.79e-9"/>
+        <Constant name="D_CL" dimension="none" value="2.08e-9"/>
+        <Constant name="F" dimension="none" value="96485"/>
+        <Constant name="R" dimension="none" value="8.314"/>
+        <Constant name="T" dimension="none" value="293"/>
+        <Constant name="pi" dimension="none" value="3.14159265"/>
+        <Constant name="Cm" dimension="none" value="2e-2"/>
+        <Constant name="qqqqq" dimension="time" value="1s"/>
+
+        <Constant name="dend1_half_G_CL" dimension="none" value="100"/>
+        <Constant name="dend1_half_G_CA" dimension="none" value="100"/>
+        <Constant name="dend2_half_G_CL" dimension="none" value="100"/>
+        <Constant name="dend2_half_G_CA" dimension="none" value="100"/>
+        <Constant name="neck1_Gleak" dimension="none" value="1.00000000000000E-8"/>
+        <Constant name="neck2_Gleak" dimension="none" value="1.00000000000000E-8"/>
+        <Constant name="head1_tau_d" dimension="none" value="0.255000000000000"/>
+        <Constant name="head1_tau_r" dimension="none" value="0.00500000000000000"/>
+        <Constant name="head1_gbar_gaba" dimension="none" value="1.00000000000000E-9"/>
+        <Constant name="head1_tau_gaba0" dimension="none" value="0.0300000000000000"/>
+        <Constant name="head1_eta_gaba" dimension="none" value="0.0340000000000000"/>
+        <Constant name="head1_theta_gaba" dimension="none" value="0.00120000000000000"/>
+        <Constant name="head1_sigma_gaba" dimension="none" value="0.0000600000000000000"/>
+        <Constant name="head1_beta" dimension="none" value="0.0800000000000000"/>
+        <Constant name="head1_Kp" dimension="none" value="0.000200000000000000"/>
+        <Constant name="head1_Ip" dimension="none" value="0.000470000000000000"/>
+        <Constant name="head1_gamma" dimension="none" value="0"/>
+        <Constant name="head1_I_max" dimension="none" value="30"/>
+        <Constant name="head1_kK" dimension="none" value="9"/>
+        <Constant name="head1_kCL" dimension="none" value="1"/>
+        <Constant name="head1_Gleak" dimension="none" value="1.00000000000000E-8"/>
+        <Constant name="head1_n_Mg_out" dimension="none" value="2"/>
+        <Constant name="head1_gbar_nmda" dimension="none" value="2.00000000000000E-10"/>
+        <Constant name="head1_tau_decay_nmda" dimension="none" value="0.0890000000000000"/>
+        <Constant name="head1_tau_rise_nmda" dimension="none" value="0.00120000000000000"/>
+        <Constant name="head1_E_K_NA" dimension="none" value="0.0100000000000000"/>
+        <Constant name="head1_E_head_ca" dimension="none" value="0.0100000000000000"/>
+        <Constant name="head1_nTB" dimension="none" value="0.100000000000000"/>
+        <Constant name="head1_kf" dimension="none" value="1000000.00000000"/>
+        <Constant name="head1_kb" dimension="none" value="500"/>
+        <Constant name="head2_tau_d" dimension="none" value="0.255000000000000"/>
+        <Constant name="head2_tau_r" dimension="none" value="0.00500000000000000"/>
+        <Constant name="head2_gbar_gaba" dimension="none" value="1.00000000000000E-9"/>
+        <Constant name="head2_tau_gaba0" dimension="none" value="0.0300000000000000"/>
+        <Constant name="head2_eta_gaba" dimension="none" value="0.0340000000000000"/>
+        <Constant name="head2_theta_gaba" dimension="none" value="0.00120000000000000"/>
+        <Constant name="head2_sigma_gaba" dimension="none" value="0.0000600000000000000"/>
+        <Constant name="head2_beta" dimension="none" value="0.0800000000000000"/>
+        <Constant name="head2_Kp" dimension="none" value="0.000200000000000000"/>
+        <Constant name="head2_Ip" dimension="none" value="0.000470000000000000"/>
+        <Constant name="head2_gamma" dimension="none" value="0"/>
+        <Constant name="head2_I_max" dimension="none" value="30"/>
+        <Constant name="head2_kK" dimension="none" value="9"/>
+        <Constant name="head2_kCL" dimension="none" value="1"/>
+        <Constant name="head2_Gleak" dimension="none" value="1.00000000000000E-8"/>
+        <Constant name="head2_n_Mg_out" dimension="none" value="2"/>
+        <Constant name="head2_gbar_nmda" dimension="none" value="2.00000000000000E-10"/>
+        <Constant name="head2_tau_decay_nmda" dimension="none" value="0.0890000000000000"/>
+        <Constant name="head2_tau_rise_nmda" dimension="none" value="0.00120000000000000"/>
+        <Constant name="head2_E_K_NA" dimension="none" value="0.0100000000000000"/>
+        <Constant name="head2_E_head_ca" dimension="none" value="0.0100000000000000"/>
+        <Constant name="head2_nTB" dimension="none" value="0.100000000000000"/>
+        <Constant name="head2_kf" dimension="none" value="1000000.00000000"/>
+        <Constant name="head2_kb" dimension="none" value="500"/>
+        <Constant name="out_n_K" dimension="none" value="3"/>
+        <Constant name="out_n_CL" dimension="none" value="134"/>
+        <Constant name="out_n_CA" dimension="none" value="2"/>
+        <Constant name="neck1_diam" dimension="none" value="1.00000000000000E-7"/>
+        <Constant name="neck1_length" dimension="none" value="1.00000000000000E-7"/>
+        <Constant name="neck1_n_K" dimension="none" value="85"/>
+        <Constant name="head1_diam" dimension="none" value="1.00000000000000E-7"/>
+        <Constant name="head1_length" dimension="none" value="1.00000000000000E-7"/>
+        <Constant name="head1_n_K" dimension="none" value="85"/>
+        <Constant name="head1_ggap" dimension="none" value="1.50000000000000E-11"/>
+        <Constant name="neck2_diam" dimension="none" value="1.00000000000000E-7"/>
+        <Constant name="neck2_length" dimension="none" value="1.00000000000000E-7"/>
+        <Constant name="neck2_n_K" dimension="none" value="85"/>
+        <Constant name="head2_diam" dimension="none" value="1.00000000000000E-7"/>
+        <Constant name="head2_length" dimension="none" value="1.00000000000000E-7"/>
+        <Constant name="head2_n_K" dimension="none" value="85"/>
+        <Constant name="head2_ggap" dimension="none" value="1.50000000000000E-11"/>
+        <Constant name="dend1_diam" dimension="none" value="0.00000100000000000000"/>
+        <Constant name="dend1_length" dimension="none" value="0.00000100000000000000"/>
+        <Constant name="dend1_n_K" dimension="none" value="85"/>
+        <Constant name="dend1_n_CL" dimension="none" value="15"/>
+        <Constant name="dend1_n_CA" dimension="none" value="15"/>
+        <Constant name="dend2_V" dimension="none" value="-0.0610000000000000"/>
+        <Constant name="dend2_diam" dimension="none" value="0.00000100000000000000"/>
+        <Constant name="dend2_length" dimension="none" value="0.00000100000000000000"/>
+        <Constant name="dend2_n_K" dimension="none" value="85"/>
+        <Constant name="dend2_n_CL" dimension="none" value="15"/>
+        <Constant name="dend2_n_CA" dimension="none" value="15"/>
+        <Dynamics>
+            <StateVariable name="neck1_V" dimension="none" exposure="neck1_V"/>
+            <StateVariable name="neck1_n_CL" dimension="none" exposure="neck1_n_CL"/>
+            <StateVariable name="neck1_n_CA" dimension="none" exposure="neck1_n_CA"/>
+            <StateVariable name="head1_V" dimension="none" exposure="head1_V"/>
+            <StateVariable name="head1_n_CL" dimension="none" exposure="head1_n_CL"/>
+            <StateVariable name="head1_n_CA" dimension="none" exposure="head1_n_CA"/>
+            <StateVariable name="head1_n_B" dimension="none" exposure="head1_n_B"/>
+            <StateVariable name="head1_ggaba" dimension="none" exposure="head1_ggaba"/>
+            <StateVariable name="head1_Y" dimension="none" exposure="head1_Y"/>
+            <StateVariable name="head1_X" dimension="none" exposure="head1_X"/>
+            <StateVariable name="head1_ca_presyn" dimension="none" exposure="head1_ca_presyn"/>
+            <StateVariable name="neck2_V" dimension="none" exposure="neck2_V"/>
+            <StateVariable name="neck2_n_CL" dimension="none" exposure="neck2_n_CL"/>
+            <StateVariable name="neck2_n_CA" dimension="none" exposure="neck2_n_CA"/>
+            <StateVariable name="head2_V" dimension="none" exposure="head2_V"/>
+            <StateVariable name="head2_n_CL" dimension="none" exposure="head2_n_CL"/>
+            <StateVariable name="head2_n_CA" dimension="none" exposure="head2_n_CA"/>
+            <StateVariable name="head2_n_B" dimension="none" exposure="head2_n_B"/>
+            <StateVariable name="head2_ggaba" dimension="none" exposure="head2_ggaba"/>
+            <StateVariable name="head2_Y" dimension="none" exposure="head2_Y"/>
+            <StateVariable name="head2_X" dimension="none" exposure="head2_X"/>
+            <StateVariable name="head2_ca_presyn" dimension="none" exposure="head2_ca_presyn"/>
+            <StateVariable name="dend1_V" dimension="none"/>
+            <TimeDerivative variable="dend1_V" value="1e3*sin(1e5*t/qqqqq)/qqqqq"/>
+            <TimeDerivative variable="neck1_V" value="((-2.5e-20*F*(neck1_n_CA - 5.0e-5) + neck1_Gleak*(-neck1_V - R*T*log(out_n_CL/neck1_n_CL)/F) - (-head1_V + neck1_V - R*T*log(head1_n_CL/neck1_n_CL)/F)/(2.0*R*T*neck1_length/(pi*D_CL*F^2*neck1_diam^2*neck1_n_CL) + 2.0*R*T*head1_length/(pi*D_CL*F^2*head1_diam^2*head1_n_CL)) - (-head1_V + neck1_V + R*T*log(head1_n_CA/neck1_n_CA)/(2*F))/(0.5*R*T*neck1_length/(pi*D_CA*F^2*neck1_diam^2*neck1_n_CA) + 0.5*R*T*head1_length/(pi*D_CA*F^2*head1_diam^2*head1_n_CA)) - (-dend1_V + neck1_V - R*T*log(dend1_n_CL/neck1_n_CL)/F)/(1/dend1_half_G_CL + 2.0*R*T*neck1_length/(pi*D_CL*F^2*neck1_diam^2*neck1_n_CL)) - (-dend1_V + neck1_V + R*T*log(dend1_n_CA/neck1_n_CA)/(2*F))/(1/dend1_half_G_CA + 0.5*R*T*neck1_length/(pi*D_CA*F^2*neck1_diam^2*neck1_n_CA)))/(pi*Cm*neck1_diam*neck1_length))/qqqqq"/>
+            <TimeDerivative variable="neck1_n_CL" value="(-4*(neck1_Gleak*(-neck1_V - R*T*log(out_n_CL/neck1_n_CL)/F) - (-head1_V + neck1_V - R*T*log(head1_n_CL/neck1_n_CL)/F)/(2.0*R*T*neck1_length/(pi*D_CL*F^2*neck1_diam^2*neck1_n_CL) + 2.0*R*T*head1_length/(pi*D_CL*F^2*head1_diam^2*head1_n_CL)) - (-dend1_V + neck1_V - R*T*log(dend1_n_CL/neck1_n_CL)/F)/(1/dend1_half_G_CL + 2.0*R*T*neck1_length/(pi*D_CL*F^2*neck1_diam^2*neck1_n_CL)))/(pi*F*neck1_diam^2*neck1_length))/qqqqq"/>
+            <TimeDerivative variable="neck1_n_CA" value="(2*(-2.5e-20*F*(neck1_n_CA - 5.0e-5) - (-head1_V + neck1_V + R*T*log(head1_n_CA/neck1_n_CA)/(2*F))/(0.5*R*T*neck1_length/(pi*D_CA*F^2*neck1_diam^2*neck1_n_CA) + 0.5*R*T*head1_length/(pi*D_CA*F^2*head1_diam^2*head1_n_CA)) - (-dend1_V + neck1_V + R*T*log(dend1_n_CA/neck1_n_CA)/(2*F))/(1/dend1_half_G_CA + 0.5*R*T*neck1_length/(pi*D_CA*F^2*neck1_diam^2*neck1_n_CA)))/(pi*F*neck1_diam^2*neck1_length))/qqqqq"/>
+            <TimeDerivative variable="head1_V" value="((-2.5e-20*F*(head1_n_CA - 5.0e-5) + head1_Gleak*(-head1_V - R*T*log(out_n_CL/head1_n_CL)/F) - pi*head1_I_max*head1_diam*head1_kCL*head1_length*(-head1_n_CL*head1_n_K + out_n_CL*out_n_K)/(head1_kK*((1 + head1_n_CL/head1_kCL)*(1 + head1_n_K/head1_kK)*(1 + out_n_CL*out_n_K/(head1_kCL*head1_kK)) + (1 + out_n_CL/head1_kCL)*(1 + out_n_K/head1_kK)*(1 + head1_n_CL*head1_n_K/(head1_kCL*head1_kK)))) + (-head1_V + head2_V)/(1/head2_ggap + 1/head1_ggap + 2.0*R*T*head2_length/(pi*D_CL*F^2*head2_diam^2*head2_n_CL) + 2.0*R*T*head1_length/(pi*D_CL*F^2*head1_diam^2*head1_n_CL)) + (-head1_V + head2_V)/(1/head2_ggap + 1/head1_ggap + 0.5*R*T*head2_length/(pi*D_CA*F^2*head2_diam^2*head2_n_CA) + 0.5*R*T*head1_length/(pi*D_CA*F^2*head1_diam^2*head1_n_CA)) - (head1_V - neck1_V - R*T*log(neck1_n_CL/head1_n_CL)/F)/(2.0*R*T*neck1_length/(pi*D_CL*F^2*neck1_diam^2*neck1_n_CL) + 2.0*R*T*head1_length/(pi*D_CL*F^2*head1_diam^2*head1_n_CL)) - (head1_V - neck1_V + R*T*log(neck1_n_CA/head1_n_CA)/(2*F))/(0.5*R*T*neck1_length/(pi*D_CA*F^2*neck1_diam^2*neck1_n_CA) + 0.5*R*T*head1_length/(pi*D_CA*F^2*head1_diam^2*head1_n_CA)))/(pi*Cm*head1_diam*head1_length))/qqqqq"/>
+            <TimeDerivative variable="head1_n_CL" value="(-4*(head1_Gleak*(-head1_V - R*T*log(out_n_CL/head1_n_CL)/F) - pi*head1_I_max*head1_diam*head1_kCL*head1_length*(-head1_n_CL*head1_n_K + out_n_CL*out_n_K)/(head1_kK*((1 + head1_n_CL/head1_kCL)*(1 + head1_n_K/head1_kK)*(1 + out_n_CL*out_n_K/(head1_kCL*head1_kK)) + (1 + out_n_CL/head1_kCL)*(1 + out_n_K/head1_kK)*(1 + head1_n_CL*head1_n_K/(head1_kCL*head1_kK)))) + (-head1_V + head2_V)/(1/head2_ggap + 1/head1_ggap + 2.0*R*T*head2_length/(pi*D_CL*F^2*head2_diam^2*head2_n_CL) + 2.0*R*T*head1_length/(pi*D_CL*F^2*head1_diam^2*head1_n_CL)) - (head1_V - neck1_V - R*T*log(neck1_n_CL/head1_n_CL)/F)/(2.0*R*T*neck1_length/(pi*D_CL*F^2*neck1_diam^2*neck1_n_CL) + 2.0*R*T*head1_length/(pi*D_CL*F^2*head1_diam^2*head1_n_CL)))/(pi*F*head1_diam^2*head1_length))/qqqqq"/>
+            <TimeDerivative variable="head1_n_CA" value="(2*(pi*F*head1_diam^2*head1_length*(-head1_kb*(head1_nTB - head1_n_B) + head1_kf*head1_n_B*head1_n_CA)/2 - 2.5e-20*F*(head1_n_CA - 5.0e-5) + (-head1_V + head2_V)/(1/head2_ggap + 1/head1_ggap + 0.5*R*T*head2_length/(pi*D_CA*F^2*head2_diam^2*head2_n_CA) + 0.5*R*T*head1_length/(pi*D_CA*F^2*head1_diam^2*head1_n_CA)) - (head1_V - neck1_V + R*T*log(neck1_n_CA/head1_n_CA)/(2*F))/(0.5*R*T*neck1_length/(pi*D_CA*F^2*neck1_diam^2*neck1_n_CA) + 0.5*R*T*head1_length/(pi*D_CA*F^2*head1_diam^2*head1_n_CA)))/(pi*F*head1_diam^2*head1_length))/qqqqq"/>
+            <TimeDerivative variable="head1_n_B" value="(2*head1_kb*(head1_nTB - head1_n_B) - 2*head1_kf*head1_n_B*head1_n_CA)/qqqqq"/>
+            <TimeDerivative variable="head1_Y" value="(-head1_Y/head1_tau_d)/qqqqq"/>
+            <TimeDerivative variable="head1_X" value="((-head1_X - head1_Y + 1)/head1_tau_r)/qqqqq"/>
+            <TimeDerivative variable="head1_ggaba" value="(head1_Y*head1_gbar_gaba - head1_ggaba/(head1_eta_gaba/(exp((-head1_ca_presyn + head1_theta_gaba)/head1_sigma_gaba) + 1.0) + head1_tau_gaba0))/qqqqq"/>
+            <TimeDerivative variable="head1_ca_presyn" value="(head1_Ip - head1_beta*head1_ca_presyn^2/(head1_Kp^2 + head1_ca_presyn^2) + head1_gamma*log(2/head1_ca_presyn))/qqqqq"/>
+            <TimeDerivative variable="neck2_V" value="((-2.5e-20*F*(neck2_n_CA - 5.0e-5) + neck2_Gleak*(-neck2_V - R*T*log(out_n_CL/neck2_n_CL)/F) - (-head2_V + neck2_V - R*T*log(head2_n_CL/neck2_n_CL)/F)/(2.0*R*T*neck2_length/(pi*D_CL*F^2*neck2_diam^2*neck2_n_CL) + 2.0*R*T*head2_length/(pi*D_CL*F^2*head2_diam^2*head2_n_CL)) - (-head2_V + neck2_V + R*T*log(head2_n_CA/neck2_n_CA)/(2*F))/(0.5*R*T*neck2_length/(pi*D_CA*F^2*neck2_diam^2*neck2_n_CA) + 0.5*R*T*head2_length/(pi*D_CA*F^2*head2_diam^2*head2_n_CA)) - (-dend2_V + neck2_V - R*T*log(dend2_n_CL/neck2_n_CL)/F)/(1/dend2_half_G_CL + 2.0*R*T*neck2_length/(pi*D_CL*F^2*neck2_diam^2*neck2_n_CL)) - (-dend2_V + neck2_V + R*T*log(dend2_n_CA/neck2_n_CA)/(2*F))/(1/dend2_half_G_CA + 0.5*R*T*neck2_length/(pi*D_CA*F^2*neck2_diam^2*neck2_n_CA)))/(pi*Cm*neck2_diam*neck2_length))/qqqqq"/>
+            <TimeDerivative variable="neck2_n_CL" value="(-4*(neck2_Gleak*(-neck2_V - R*T*log(out_n_CL/neck2_n_CL)/F) - (-head2_V + neck2_V - R*T*log(head2_n_CL/neck2_n_CL)/F)/(2.0*R*T*neck2_length/(pi*D_CL*F^2*neck2_diam^2*neck2_n_CL) + 2.0*R*T*head2_length/(pi*D_CL*F^2*head2_diam^2*head2_n_CL)) - (-dend2_V + neck2_V - R*T*log(dend2_n_CL/neck2_n_CL)/F)/(1/dend2_half_G_CL + 2.0*R*T*neck2_length/(pi*D_CL*F^2*neck2_diam^2*neck2_n_CL)))/(pi*F*neck2_diam^2*neck2_length))/qqqqq"/>
+            <TimeDerivative variable="neck2_n_CA" value="(2*(-2.5e-20*F*(neck2_n_CA - 5.0e-5) - (-head2_V + neck2_V + R*T*log(head2_n_CA/neck2_n_CA)/(2*F))/(0.5*R*T*neck2_length/(pi*D_CA*F^2*neck2_diam^2*neck2_n_CA) + 0.5*R*T*head2_length/(pi*D_CA*F^2*head2_diam^2*head2_n_CA)) - (-dend2_V + neck2_V + R*T*log(dend2_n_CA/neck2_n_CA)/(2*F))/(1/dend2_half_G_CA + 0.5*R*T*neck2_length/(pi*D_CA*F^2*neck2_diam^2*neck2_n_CA)))/(pi*F*neck2_diam^2*neck2_length))/qqqqq"/>
+            <TimeDerivative variable="head2_V" value="((-2.5e-20*F*(head2_n_CA - 5.0e-5) + head2_Gleak*(-head2_V - R*T*log(out_n_CL/head2_n_CL)/F) - pi*head2_I_max*head2_diam*head2_kCL*head2_length*(-head2_n_CL*head2_n_K + out_n_CL*out_n_K)/(head2_kK*((1 + head2_n_CL/head2_kCL)*(1 + head2_n_K/head2_kK)*(1 + out_n_CL*out_n_K/(head2_kCL*head2_kK)) + (1 + out_n_CL/head2_kCL)*(1 + out_n_K/head2_kK)*(1 + head2_n_CL*head2_n_K/(head2_kCL*head2_kK)))) + (head1_V - head2_V)/(1/head2_ggap + 1/head1_ggap + 2.0*R*T*head2_length/(pi*D_CL*F^2*head2_diam^2*head2_n_CL) + 2.0*R*T*head1_length/(pi*D_CL*F^2*head1_diam^2*head1_n_CL)) + (head1_V - head2_V)/(1/head2_ggap + 1/head1_ggap + 0.5*R*T*head2_length/(pi*D_CA*F^2*head2_diam^2*head2_n_CA) + 0.5*R*T*head1_length/(pi*D_CA*F^2*head1_diam^2*head1_n_CA)) - (head2_V - neck2_V - R*T*log(neck2_n_CL/head2_n_CL)/F)/(2.0*R*T*neck2_length/(pi*D_CL*F^2*neck2_diam^2*neck2_n_CL) + 2.0*R*T*head2_length/(pi*D_CL*F^2*head2_diam^2*head2_n_CL)) - (head2_V - neck2_V + R*T*log(neck2_n_CA/head2_n_CA)/(2*F))/(0.5*R*T*neck2_length/(pi*D_CA*F^2*neck2_diam^2*neck2_n_CA) + 0.5*R*T*head2_length/(pi*D_CA*F^2*head2_diam^2*head2_n_CA)))/(pi*Cm*head2_diam*head2_length))/qqqqq"/>
+            <TimeDerivative variable="head2_n_CL" value="(-4*(head2_Gleak*(-head2_V - R*T*log(out_n_CL/head2_n_CL)/F) - pi*head2_I_max*head2_diam*head2_kCL*head2_length*(-head2_n_CL*head2_n_K + out_n_CL*out_n_K)/(head2_kK*((1 + head2_n_CL/head2_kCL)*(1 + head2_n_K/head2_kK)*(1 + out_n_CL*out_n_K/(head2_kCL*head2_kK)) + (1 + out_n_CL/head2_kCL)*(1 + out_n_K/head2_kK)*(1 + head2_n_CL*head2_n_K/(head2_kCL*head2_kK)))) + (head1_V - head2_V)/(1/head2_ggap + 1/head1_ggap + 2.0*R*T*head2_length/(pi*D_CL*F^2*head2_diam^2*head2_n_CL) + 2.0*R*T*head1_length/(pi*D_CL*F^2*head1_diam^2*head1_n_CL)) - (head2_V - neck2_V - R*T*log(neck2_n_CL/head2_n_CL)/F)/(2.0*R*T*neck2_length/(pi*D_CL*F^2*neck2_diam^2*neck2_n_CL) + 2.0*R*T*head2_length/(pi*D_CL*F^2*head2_diam^2*head2_n_CL)))/(pi*F*head2_diam^2*head2_length))/qqqqq"/>
+            <TimeDerivative variable="head2_n_CA" value="(2*(pi*F*head2_diam^2*head2_length*(-head2_kb*(head2_nTB - head2_n_B) + head2_kf*head2_n_B*head2_n_CA)/2 - 2.5e-20*F*(head2_n_CA - 5.0e-5) + (head1_V - head2_V)/(1/head2_ggap + 1/head1_ggap + 0.5*R*T*head2_length/(pi*D_CA*F^2*head2_diam^2*head2_n_CA) + 0.5*R*T*head1_length/(pi*D_CA*F^2*head1_diam^2*head1_n_CA)) - (head2_V - neck2_V + R*T*log(neck2_n_CA/head2_n_CA)/(2*F))/(0.5*R*T*neck2_length/(pi*D_CA*F^2*neck2_diam^2*neck2_n_CA) + 0.5*R*T*head2_length/(pi*D_CA*F^2*head2_diam^2*head2_n_CA)))/(pi*F*head2_diam^2*head2_length))/qqqqq"/>
+            <TimeDerivative variable="head2_n_B" value="(2*head2_kb*(head2_nTB - head2_n_B) - 2*head2_kf*head2_n_B*head2_n_CA)/qqqqq"/>
+            <TimeDerivative variable="head2_Y" value="(-head2_Y/head2_tau_d)/qqqqq"/>
+            <TimeDerivative variable="head2_X" value="((-head2_X - head2_Y + 1)/head2_tau_r)/qqqqq"/>
+            <TimeDerivative variable="head2_ggaba" value="(head2_Y*head2_gbar_gaba - head2_ggaba/(head2_eta_gaba/(exp((-head2_ca_presyn + head2_theta_gaba)/head2_sigma_gaba) + 1.0) + head2_tau_gaba0))/qqqqq"/>
+            <TimeDerivative variable="head2_ca_presyn" value="(head2_Ip - head2_beta*head2_ca_presyn^2/(head2_Kp^2 + head2_ca_presyn^2) + head2_gamma*log(2/head2_ca_presyn))/qqqqq"/>
+            <OnStart>
+                <StateAssignment variable="dend1_V" value="-0.0610000000000000"/>
+                <StateAssignment variable="neck1_V" value="-0.0610000000000000"/>
+                <StateAssignment variable="neck1_n_CL" value="5"/>
+                <StateAssignment variable="neck1_n_CA" value="10"/>
+                <StateAssignment variable="head1_V" value="-0.0610000000000000"/>
+                <StateAssignment variable="head1_n_CL" value="3.50000000000000"/>
+                <StateAssignment variable="head1_n_CA" value="10"/>
+                <StateAssignment variable="head1_n_B" value="0"/>
+                <StateAssignment variable="head1_ggaba" value="0"/>
+                <StateAssignment variable="head1_Y" value="0"/>
+                <StateAssignment variable="head1_X" value="0"/>
+                <StateAssignment variable="head1_ca_presyn" value="0"/>
+                <StateAssignment variable="neck2_V" value="-0.0610000000000000"/>
+                <StateAssignment variable="neck2_n_CL" value="5"/>
+                <StateAssignment variable="neck2_n_CA" value="10"/>
+                <StateAssignment variable="head2_V" value="-0.0610000000000000"/>
+                <StateAssignment variable="head2_n_CL" value="3.50000000000000"/>
+                <StateAssignment variable="head2_n_CA" value="10"/>
+                <StateAssignment variable="head2_n_B" value="0"/>
+                <StateAssignment variable="head2_ggaba" value="0"/>
+                <StateAssignment variable="head2_Y" value="0"/>
+                <StateAssignment variable="head2_X" value="0"/>
+                <StateAssignment variable="head2_ca_presyn" value="0"/>
+            </OnStart>
+        </Dynamics>
+        <Exposure name="neck1_V" dimension="none"/>
+        <Exposure name="neck1_n_CL" dimension="none"/>
+        <Exposure name="neck1_n_CA" dimension="none"/>
+        <Exposure name="head1_V" dimension="none"/>
+        <Exposure name="head1_n_CL" dimension="none"/>
+        <Exposure name="head1_n_CA" dimension="none"/>
+        <Exposure name="head1_n_B" dimension="none"/>
+        <Exposure name="head1_ggaba" dimension="none"/>
+        <Exposure name="head1_Y" dimension="none"/>
+        <Exposure name="head1_X" dimension="none"/>
+        <Exposure name="head1_ca_presyn" dimension="none"/>
+        <Exposure name="neck2_V" dimension="none"/>
+        <Exposure name="neck2_n_CL" dimension="none"/>
+        <Exposure name="neck2_n_CA" dimension="none"/>
+        <Exposure name="head2_V" dimension="none"/>
+        <Exposure name="head2_n_CL" dimension="none"/>
+        <Exposure name="head2_n_CA" dimension="none"/>
+        <Exposure name="head2_n_B" dimension="none"/>
+        <Exposure name="head2_ggaba" dimension="none"/>
+        <Exposure name="head2_Y" dimension="none"/>
+        <Exposure name="head2_X" dimension="none"/>
+        <Exposure name="head2_ca_presyn" dimension="none"/>
+
+    </ComponentType>
+    <ggj id="ggj1"/>
+    <Simulation id="sim1" length="0.001s" step="0.00000001s" target="ggj1">
+        <Display id="d0" title="Plot title" timeScale="1ms" xmin="0"  xmax="1" ymin="-0.1" ymax="0.1">
+            <Line id="head1" quantity="head1_V" scale="1" color="#FF0000" timeScale="1ms" />
+            <Line id="head2" quantity="head2_V" scale="1" color="#FF0000" timeScale="1ms" />
+            <Line id="neck1" quantity="neck1_V" scale="1" color="#FF0000" timeScale="1ms" />
+            <Line id="neck2" quantity="neck2_V" scale="1" color="#FF0000" timeScale="1ms" />
+        </Display>
+    </Simulation>
+    <Target component="sim1" />
+</Lems>
+    
