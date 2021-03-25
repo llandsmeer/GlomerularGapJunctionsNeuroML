@@ -5,11 +5,30 @@
     <Include file="Networks.xml" />
     <Include file="Simulation.xml" />
 
+    <!-- <Include file="GlomerularGapJunction.xml"/> -->
+    <!-- <glomerularGapJunction id="gj1" conductance="10pS"/> -->
+    <!--
+    <electricalProjection id ="testGJconn" presynapticPopulation="iafPop1" postsynapticPopulation="iafPop2">
+        <electricalConnection id="0" preCell="0" postCell="0" synapse="gj1"/>
+    </electricalProjection>
+    -->
 
+    <ComponentType name="customLinearGradedSynapse"
+                   extends="baseGradedSynapse"
+                   description="Behaves just like a one way gap junction.">
+        <Property name="weight" dimension="none" defaultValue="2"/>
+        <Parameter name="conductance" dimension="conductance"/>
+        <Exposure name="i" dimension="current"/>
+        <Requirement name="v" dimension="voltage"/>
+        <InstanceRequirement name="peer" type="baseGradedSynapse"/>
+        <Dynamics>
+            <DerivedVariable name="vpeer" dimension="voltage" select="peer/v"/>
+            <DerivedVariable name="i" exposure="i"  value="weight * conductance * (vpeer - v)"/>
+        </Dynamics>
+    </ComponentType>
 
-    <Include file="./GlomerularGapJunction.xml"/>
-
-    <glomerularGapJunction id="gj1" conductance="10pS"/>
+    <customLinearGradedSynapse id="gs1" conductance="5pS"/>
+    <silentSynapse id="silent1"/>
 
     <iafCell id="iaf" leakConductance="0.2nS" leakReversal="-70mV" thresh="-55mV" reset="-70mV" C="3.2pF"/>
 
@@ -20,13 +39,12 @@
         <population id="iafPop1" component="iaf" size="1" />
         <population id="iafPop2" component="iaf" size="1" />
 
-        <electricalProjection id ="testGJconn" presynapticPopulation="iafPop1" postsynapticPopulation="iafPop2">
-            <electricalConnection id="0" preCell="0" postCell="0" synapse="gj1"/>
-        </electricalProjection>
+        <continuousProjection id ="testLinearGradedConn" presynapticPopulation="iafPop1" postsynapticPopulation="iafPop2">
+            <continuousConnection id="0" preCell="0" postCell="0" preComponent="silent1" postComponent="gs1"/>
+        </continuousProjection>
 
         <explicitInput target="iafPop1[0]" input="pulseGen1" destination="synapses"/>
         <explicitInput target="iafPop2[0]" input="pulseGen2" destination="synapses"/>
-
     </network>
 
     <Simulation id="sim1" length="700ms" step="0.01ms" target="net1">
