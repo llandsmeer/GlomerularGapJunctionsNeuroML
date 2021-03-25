@@ -208,6 +208,13 @@ class Compartment:
         Inext = self.current_i_k(self.next, k)
         return (Iprev + Inext)
 
+    def single_I_long_diff(self, comp):
+        'Used for code generation only'
+        Itot = 0
+        for k in [CA, CL]:
+            Itot += self.current_i_k(comp, k)
+        return Itot
+
     def mech_I_leak(self, k):
         if k != CL:
             return 0
@@ -593,6 +600,11 @@ def codegen():
             final_consts.append(Assignment(k, v))
             seen.add(k)
 
+    final_derived = [
+            Assignment(sympy.Symbol('I_inward_dend1'), neck1.single_I_long_diff(dend1)),
+            Assignment(sympy.Symbol('I_inward_dend2'), neck2.single_I_long_diff(dend2)),
+            ]
+
     final_state = []
 
     for k, v in state.items():
@@ -601,7 +613,7 @@ def codegen():
     for f in reset:
         f()
 
-    return dict(state=final_state, const=final_consts, grads=final_grads)
+    return dict(state=final_state, const=final_consts, grads=final_grads, derived=final_derived)
 
 def print_ccode():
     import sympy
@@ -659,12 +671,12 @@ def print_neuroml():
     <Include file="NeuroMLCoreCompTypes.xml"/>
     <Include file="Simulation.xml" />
     <ComponentType name="ggj" description="de Gruijl 2016">
-        <Constant name="D_CA" dimension="none" value="0.79e-9"/>
-        <Constant name="D_CL" dimension="none" value="2.08e-9"/>
+        <Constant name="pi" dimension="none" value="3.14159265"/>
         <Constant name="F" dimension="none" value="96485"/>
         <Constant name="R" dimension="none" value="8.314"/>
+        <Constant name="D_CA" dimension="none" value="0.79e-9"/>
+        <Constant name="D_CL" dimension="none" value="2.08e-9"/>
         <Constant name="T" dimension="none" value="293"/>
-        <Constant name="pi" dimension="none" value="3.14159265"/>
         <Constant name="Cm" dimension="none" value="2e-2"/>
         <Constant name="qqqqq" dimension="time" value="1s"/>
 ''')
@@ -676,14 +688,21 @@ def print_neuroml():
             print(8*' ' + f'<Constant name="{eq.lhs}" dimension="none" value="{eq.rhs}"/>')
 
     print(8*' ' + '<Dynamics>')
+    for eq in code['derived']:
+        print(12*' ' + f'<DerivedVariable name="{eq.lhs}" value="{lexp(eq.rhs)}" dimension="none" exposure="{eq.lhs}"/>')
     for eq in code['state']:
         if f'grad_{eq.lhs}' in [str(g.lhs) for g in code['grads']]:
             print(12*' ' + f'<StateVariable name="{eq.lhs}" dimension="none" exposure="{eq.lhs}"/>')
-        # DerivedVariable name=i dimension=current exposure=i value=g*E-v
 
-    for eq in code['grads']:
+    subexpr, grads_cse = sympy.cse(code['grads'])
+    for k, v in subexpr:
+        print(12*' ' + f'<DerivedVariable name="{k}" value="{lexp(v)}" dimension="none"/>')
+    for eq in grads_cse:
         k = str(eq.lhs).replace('grad_', '')
         print(12*' ' + f'<TimeDerivative variable="{k}" value="({lexp(eq.rhs)})/qqqqq"/>')
+    #for eq in code['grads']:
+        #k = str(eq.lhs).replace('grad_', '')
+        #print(12*' ' + f'<TimeDerivative variable="{k}" value="({lexp(eq.rhs)})/qqqqq"/>')
 
     print(12*' ' + f'<OnStart>')
     for eq in code['state']:
@@ -697,13 +716,18 @@ def print_neuroml():
     for eq in code['state']:
         if f'grad_{eq.lhs}' in [str(g.lhs) for g in code['grads']]:
             print(8*' ' + f'<Exposure name="{eq.lhs}" dimension="none"/>')
+    for eq in code['derived']:
+        print(8*' ' + f'<Exposure name="{eq.lhs}" dimension="none"/>')
 
     print('''
     </ComponentType>
     <ggj id="ggj1"/>
     <Simulation id="sim1" length="0.001s" step="0.00000001s" target="ggj1">
-        <Display id="d0" title="Plot title" timeScale="1ms" xmin="0"  xmax="1" ymin="-100" ymax="100">
-            <Line id="test" quantity="head1_V" scale="1" color="#FF0000" timeScale="1ms" />
+        <Display id="d0" title="Plot title" timeScale="1ms" xmin="0"  xmax="1" ymin="-0.1" ymax="0.1">
+            <Line id="head1" quantity="head1_V" scale="1" color="#FF0000" timeScale="1ms" />
+            <Line id="head2" quantity="head2_V" scale="1" color="#FF0000" timeScale="1ms" />
+            <Line id="neck1" quantity="neck1_V" scale="1" color="#FF0000" timeScale="1ms" />
+            <Line id="neck2" quantity="neck2_V" scale="1" color="#FF0000" timeScale="1ms" />
         </Display>
     </Simulation>
     <Target component="sim1" />

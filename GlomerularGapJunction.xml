@@ -4,9 +4,19 @@
       description="Glomerular gap junctions">
 
     <ComponentType name="glomerularGapJunction"
-                   extends="gapJunction"
+                   extends="baseSynapse"
                    description="de Gruijl et al. 2016">
-        <Constant name="weight" dimension="none" value="1"/>
+
+        <Property name="weight" dimension="none" defaultValue="1"/>
+        <Parameter name="conductance" dimension="conductance"/>
+        <Exposure name="i" dimension="current"/>
+        <Requirement name="v" dimension="voltage"/>
+        <InstanceRequirement name="peer" type="gapJunction"/>
+
+        <Dynamics>
+            <DerivedVariable name="vpeer" dimension="voltage" select="peer/v"/>
+            <DerivedVariable name="i" exposure="i"  value="weight * conductance * (vpeer - v)"/>
+        </Dynamics>
     </ComponentType>
 
 </Lems>
